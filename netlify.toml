@@ -1,0 +1,37 @@
+[build]
+    publish = "dist"
+    command = "npm run build"
+   
+
+[functions]
+    directory = "functions"
+    node_bundler = "esbuild" 
+
+
+[[headers]]
+    for = "/*"
+    [headers.values]
+        Access-Control-Allow-Origin = "*"
+        Access-Control-Allow-Methods = "*"
+        Access-Control-Allow-Headers = "*"
+
+
+[[redirects]]
+    from = "/home"
+    to = "/"
+    force = true
+
+[[redirects]]
+    from = "/home.html"
+    to = "/"
+    force = true
+
+[[redirects]]
+    from = "/*"
+    to = "/404.html"
+
+
+[dev]
+    port = 8888
+    command = "npm start"
+    publish = "src"

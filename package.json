@@ -1,0 +1,27 @@
+{
+  "scripts": {
+    "prebuild": "rm -rf dist",
+    "start": "npm run prebuild && parcel src/home.html",
+    "build": "parcel build src/home.html src/404.html"
+  },
+  "browserslist": {
+    "production": [
+      "> 0.25%",
+      "not dead",
+      "not IE 11",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 2 chrome version",
+      "last 2 firefox version",
+      "last 2 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.7.0",
+    "parcel": "^2.7.0"
+  },
+  "dependencies": {
+    "axios": "^0.27.0"
+  }
+}

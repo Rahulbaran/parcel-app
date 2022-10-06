@@ -1,0 +1,99 @@
+@font-face {
+  src: url(../assets/fonts/Geom-Variable.ttf);
+  font-family: "Geom";
+  font-style: normal;
+  font-weight: 300 900;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+  min-block-size: 100vh;
+  scroll-behavior: smooth;
+
+  @media screen and (min-width: 30.0625em) {
+    font-size: 81.25%;
+  }
+  @media screen and (min-width: 48.0625em) {
+    font-size: 100%;
+  }
+  @media screen and (min-width: 80em) {
+    font-size: 118.75%;
+  }
+
+  @media (prefers-reduced-motion) {
+    scroll-behavior: auto;
+  }
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+:root {
+  --base-font-size: 1rem;
+  --base-padding: 0.5em;
+  --base-margin: 0.5em;
+  --base-border-radius: 20px;
+  --base-line-height: 1.5;
+  --base-gap: 0.5rem;
+
+  --font-stack-geom: "Geom", serif;
+}
+
+body {
+  min-block-size: 100vh;
+  background-color: goldenrod;
+  font: 400 var(--base-font-size) / var(--base-line-height)
+    var(--font-stack-geom);
+  display: grid;
+}
+
+.container {
+  margin: auto;
+  padding: calc(var(--base-padding) * 4) calc(var(--base-padding) * 3);
+  background-color: hwb(50deg 80% 10%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--base-gap);
+  border-radius: calc(var(--base-border-radius, 20px) * 0.15);
+
+  & > h1 {
+    color: hwb(50deg 10% 60%);
+    margin-block-end: var(--base-margin);
+    font-weight: 900;
+  }
+}
+
+select {
+  font-family: inherit;
+  font-size: calc(var(--base-font-size) * 1.15);
+  font-weight: 500;
+  padding: var(--base-padding);
+  border: 1px solid hwb(50deg 80% 40%);
+  border-radius: calc(var(--base-boder-radius) * 0.2);
+  color: hwb(43 30% 85%);
+}
+
+.work {
+  color: hwb(30deg 10% 60%);
+  line-height: calc(var(--base-line-height) / 1.5);
+  margin-block-start: calc(var(--base-margin) * 4);
+  background-color: hwb(60deg 10% 20% / 0.25);
+  font-size: calc(var(--base-font-size) * 1.25);
+  padding: calc(var(--base-padding) * 0.75);
+
+  & > span {
+    display: inline-block;
+    margin-inline-start: var(--base-margin);
+  }
+
+  &.work-error {
+    color: hwb(350 10% 0%);
+  }
+}
