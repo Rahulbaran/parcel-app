@@ -16,6 +16,7 @@
         Access-Control-Allow-Headers = "*"
 
 
+
 [[redirects]]
     from = "/home"
     to = "/"
@@ -28,7 +29,7 @@
 
 [[redirects]]
     from = "/*"
-    to = "/404.html"
+    to = "/404"
 
 
 [dev]
